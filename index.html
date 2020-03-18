@@ -21,14 +21,26 @@
             <div class="palette-color color-3"></div>
             <div class="palette-color color-4"></div>
             <div class="palette-color color-5"></div>
-            <button class = 'increase'>Increase size</button>
-            <button class = 'auto'> mouse over mode = OFF </button>
           </section>
           <section class="brush">
             <div class="current-brush color-2">
               <img class="icon brush-icon" src="paintbrush.png">
             </div>
           </section>
+          <section class = 'colorChart'>
+            <button class = 'increase'>Increase size</button>
+            <button class = 'auto'> mouse over mode = OFF </button>
+
+            <form action="/action_page.php">
+              <label for="color">Create New Color</label><br>
+              <a href="https://www.rapidtables.com/web/color/RGB_Color.html" target=”_blank”
+              onClick="window.open('https://www.rapidtables.com/web/color/RGB_Color.html','pagename','resizable,height=600,width=800'); return false;"
+              >Color Chart</a>
+              <input type="text" id="color" value= 'rgb(0, 0, 0)'> 
+            </form>
+            <button class = 'create'> Create </button>
+          </section>
+
         </section>
         <section class="canvas">
           <div class="square color-5"></div>

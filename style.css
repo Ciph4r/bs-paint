@@ -13,10 +13,12 @@ html{
 }
 
 .brush-selection {
-  height: 70px;
+  height: 120px;
+  display: flex;
 }
 
 .paint {
+
   height: 500px;
 
   
@@ -46,7 +48,7 @@ html{
   border: 1px black solid;
   grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
   /* grid-template-rows: repeat(auto-fit, minmax(50px, 1fr)) ; */
-  height: 500px;
+  height: auto;
   /* width: 500px; */
   
 }
@@ -58,15 +60,15 @@ height: 50px;
 }
 
 .color-1 {
-/* background-color: green; */
+background-color: green;
 }
 
 .color-2 {
-  background-color: yellow;
+  background-color: rgb(255, 255, 0);
 }
 
 .color-3 {
-  background-color: red;
+  background-color: rgb(255, 47, 47);
   
 }
 
@@ -79,4 +81,11 @@ height: 50px;
 }
 .color-new {
   background-color: rgb(245, 238, 245);
+}
+
+
+.colorChart{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }

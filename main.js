@@ -1,8 +1,11 @@
 let square = document.querySelectorAll('.square')
 const currentColor = document.querySelector('.current-brush')
 const canvas = document.querySelector('.canvas')
- canvas.style.width = '500px'
+canvas.style.width = '500px'
 let auto = false
+let customColor = false
+
+
 
 // const color = document.querySelector('.color-1')
 // const color2 = document.querySelector('.color-2')
@@ -20,13 +23,28 @@ const colorName = (x) =>{
     }
 
 const brushColor = (event) =>{
+    currentColor.style.backgroundColor = ''
     currentColor.className = "current-brush "+ colorName(event.target.className)
+    customColor = false
 }
+
+// const squareColor = (event) =>{
+// event.target.className = 'square ' + colorName(currentColor.className)
+
+// }
+
 
 const squareColor = (event) =>{
-event.target.className = 'square ' + colorName(currentColor.className)
-
+    if(customColor){
+    event.target.style.backgroundColor = currentColor.style.backgroundColor
+        event.target.className = 'square'
+    }else {
+        event.target.className = 'square ' + colorName(currentColor.className)
+        event.target.style.backgroundColor = ''
+    }
 }
+
+
 
 const palette = document.querySelectorAll('.palette-color')
 for (const l of palette){
@@ -46,7 +64,7 @@ for (const l of square){
 // MORE SPACE
 const increase = document.querySelector('.increase')
 
-const gridColumns = getComputedStyle(canvas)
+// const gridColumns = getComputedStyle(canvas)
 
 const addMoreSpace = () => {
  let x = canvas.style.width.split('px')
@@ -59,8 +77,8 @@ const increaseCanv = () => {
     canvisSize += 2
     for (i = 0 ; i < canvisSize ; i++){
         let div = document.createElement('div')
-        div.setAttribute('class', "square color-new")
-        div.addEventListener('click',squareColor)
+        div.setAttribute('class', "square color-5")
+        div.addEventListener(auto ? 'mouseover' : 'click', squareColor) 
         canvas.append(div)
     }
     canvas.style.width  = addMoreSpace()
@@ -96,9 +114,27 @@ const autoMode = document.querySelector('.auto')
 autoMode.addEventListener('click',toggleMode)
 
 /////// add color
+let colorCount = 6
+const colorButton = document.querySelector('.create')
+const paletteColor = document.querySelector('.palette')
+const brushColor2 = (event) =>{
+    currentColor.style.backgroundColor = event.target.style.backgroundColor
+    currentColor.className = "current-brush"
+    customColor = true
+}
 
 
-const color = document.querySelector('.color-1')
 
-color.style.backgroundColor = 'blue'
+
+const createColor = () => {
+    let div = document.createElement('div')
+    const colorValue = document.querySelector('#color').value
+        div.setAttribute('class', 'palette-color color-' + colorCount)
+        div.style.backgroundColor = colorValue
+        div.addEventListener('click' , brushColor2)
+        colorCount ++
+        paletteColor.append(div)
+}
+
+colorButton.addEventListener('click',createColor)
 
