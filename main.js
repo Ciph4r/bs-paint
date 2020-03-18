@@ -1,4 +1,4 @@
-const square = document.querySelectorAll('.square')
+let square = document.querySelectorAll('.square')
 const currentColor = document.querySelector('.current-brush')
 const canvas = document.querySelector('.canvas')
  canvas.style.width = '500px'
@@ -73,31 +73,32 @@ increase.addEventListener('click',increaseCanv)
 
 //AUTO MODE
 const toggleMode = () => {
-
-
+    let square = document.querySelectorAll('.square')
+    canvas.style.border = '1px solid black'
     if (auto){
         auto = false
-        for (const l of square){
-            l.removeEventListener('mouseover', squareColor)
-        }
-        for (const l of square){
-            l.addEventListener('click' , squareColor)
-        }
+        
         autoMode.innerHTML = 'mouse over mode = OFF'
-    }else {
+     } else {
         auto = true
-        for (const l of square){
-            l.removeEventListener('click', squareColor)
-        }
-        for (const l of square){
-            l.addEventListener('mouseover' , squareColor)
-        }
         autoMode.innerHTML = 'mouse over mode = ON'
     }
-          
+    for (const l of square){
+        l.removeEventListener(auto ?'click' : 'mouseover', squareColor)
+    }
+    for (const l of square){
+        l.addEventListener(auto ? 'mouseover' : 'click', squareColor)       
+}
 }
 
 const autoMode = document.querySelector('.auto')
 
 autoMode.addEventListener('click',toggleMode)
+
+/////// add color
+
+
+const color = document.querySelector('.color-1')
+
+color.style.backgroundColor = 'blue'
 
