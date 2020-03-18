@@ -1,5 +1,8 @@
 const square = document.querySelectorAll('.square')
 const currentColor = document.querySelector('.current-brush')
+const canvas = document.querySelector('.canvas')
+ canvas.style.width = '500px'
+let auto = false
 
 // const color = document.querySelector('.color-1')
 // const color2 = document.querySelector('.color-2')
@@ -31,15 +34,70 @@ for (const l of palette){
 }
 
 for (const l of square){
-    l.addEventListener('click',squareColor)
+    l.addEventListener('click' , squareColor)
 }
 
 
 
 
+// extra goal stuff
 
 
+// MORE SPACE
+const increase = document.querySelector('.increase')
+
+const gridColumns = getComputedStyle(canvas)
+
+const addMoreSpace = () => {
+ let x = canvas.style.width.split('px')
+ return Number(x[0]) + 50 + 'px'
+ }
 
 
+let canvisSize = 19
+const increaseCanv = () => {
+    canvisSize += 2
+    for (i = 0 ; i < canvisSize ; i++){
+        let div = document.createElement('div')
+        div.setAttribute('class', "square color-new")
+        div.addEventListener('click',squareColor)
+        canvas.append(div)
+    }
+    canvas.style.width  = addMoreSpace()
+}
 
+increase.addEventListener('click',increaseCanv)
+
+
+//////////////////////////////////////
+
+//AUTO MODE
+const toggleMode = () => {
+
+
+    if (auto){
+        auto = false
+        for (const l of square){
+            l.removeEventListener('mouseover', squareColor)
+        }
+        for (const l of square){
+            l.addEventListener('click' , squareColor)
+        }
+        autoMode.innerHTML = 'mouse over mode = OFF'
+    }else {
+        auto = true
+        for (const l of square){
+            l.removeEventListener('click', squareColor)
+        }
+        for (const l of square){
+            l.addEventListener('mouseover' , squareColor)
+        }
+        autoMode.innerHTML = 'mouse over mode = ON'
+    }
+          
+}
+
+const autoMode = document.querySelector('.auto')
+
+autoMode.addEventListener('click',toggleMode)
 
