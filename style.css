@@ -15,6 +15,7 @@ html{
 .brush-selection {
   height: 120px;
   display: flex;
+  justify-content: center;
 }
 
 .paint {
@@ -46,10 +47,10 @@ html{
 .canvas {
   display: grid;
   border: 1px black solid;
-  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  /* grid-template-columns: repeat(auto-fill, minmax(50px, 1fr)); */
   /* grid-template-rows: repeat(auto-fit, minmax(50px, 1fr)) ; */
-  height: auto;
-  /* width: 500px; */
+  /* height: auto;
+  width: auto; */
   
 }
 

@@ -1,7 +1,10 @@
 let square = document.querySelectorAll('.square')
 const currentColor = document.querySelector('.current-brush')
 const canvas = document.querySelector('.canvas')
-canvas.style.width = '500px'
+// canvas.style.width = '500px'
+let gridCount = 11
+canvas.style.gridTemplateColumns = 'repeat(10,1fr)'
+canvas.style.gridTemplateRows = 'repeat(10,1fr)'
 let auto = false
 let customColor = false
 
@@ -66,10 +69,14 @@ const increase = document.querySelector('.increase')
 
 // const gridColumns = getComputedStyle(canvas)
 
-const addMoreSpace = () => {
- let x = canvas.style.width.split('px')
- return Number(x[0]) + 50 + 'px'
- }
+// const addMoreSpace = () => {
+//  let x = canvas.style.width.split('px')
+//  return Number(x[0]) + 50 + 'px'
+//  }
+
+
+
+ 
 
 
 let canvisSize = 19
@@ -81,7 +88,9 @@ const increaseCanv = () => {
         div.addEventListener(auto ? 'mouseover' : 'click', squareColor) 
         canvas.append(div)
     }
-    canvas.style.width  = addMoreSpace()
+    canvas.style.gridTemplateColumns = `repeat(${gridCount},1fr)`
+    canvas.style.gridTemplateRows = `repeat(${gridCount},1fr)`
+    gridCount ++
 }
 
 increase.addEventListener('click',increaseCanv)
