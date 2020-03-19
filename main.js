@@ -292,9 +292,9 @@ const smallSize = () => {
     for (const l of squares){
     l.style.width = "5px"
     l.style.height = '5px'
+    canvisSize -= 100
 }
 }
-
 smallpx.addEventListener('click',smallSize)
 
 
