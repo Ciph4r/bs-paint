@@ -155,6 +155,7 @@ let threeSqButton = document.querySelector('.threeSq')
 let threeSquare = false
 
 const paintThreeSq = (event) =>{
+    let square = document.querySelectorAll('.square')
 if (threeSquare){
     let x = Array.from(square).indexOf(event.target)
     square[x - 1].style.backgroundColor = currentColor.style.backgroundColor
@@ -170,6 +171,7 @@ if (threeSquare){
 
 
 const paintThreeToggle = () => {
+    let square = document.querySelectorAll('.square')
     if (threeSquare) {
         threeSquare = false  
         threeSqButton.innerHTML = 'Paint Three Squares = OFF' 
