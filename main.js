@@ -1,7 +1,6 @@
 let square = document.querySelectorAll('.square')
 const currentColor = document.querySelector('.current-brush')
 const canvas = document.querySelector('.canvas')
-// canvas.style.width = '500px'
 let gridCount = 11
 canvas.style.gridTemplateColumns = 'repeat(10,1fr)'
 canvas.style.gridTemplateRows = 'repeat(10,1fr)'
@@ -31,10 +30,7 @@ const brushColor = (event) =>{
     customColor = false
 }
 
-// const squareColor = (event) =>{
-// event.target.className = 'square ' + colorName(currentColor.className)
 
-// }
 
 
 const squareColor = (event) =>{
@@ -185,4 +181,120 @@ const paintThreeToggle = () => {
 }
 
 threeSqButton.addEventListener('click',paintThreeToggle)
+
+
+/// smaller px
+
+const smallpx = document.querySelector('.smaller')
+
+const smallSize = () => {
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    increaseCanv()
+    let squares = document.querySelectorAll('.square')
+    for (const l of squares){
+    l.style.width = "5px"
+    l.style.height = '5px'
+}
+}
+
+smallpx.addEventListener('click',smallSize)
+
 
