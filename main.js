@@ -147,3 +147,37 @@ const createColor = () => {
 
 colorButton.addEventListener('click',createColor)
 
+
+
+/////paint three square at a time
+
+let threeSqButton = document.querySelector('.threeSq')
+let threeSquare = false
+
+const paintThreeSq = (event) =>{
+if (threeSquare){
+    let x = square.indexOf(event.target)
+    square[x-1].style.backgroundColor = currentColor.style.backgroundColor
+    square[x+1].style.backgroundColor = currentColor.style.backgroundColor
+}
+}
+
+
+
+
+
+const paintThreeToggle = () => {
+    if (threeSquare) {
+        threeSquare = false  
+        threeSqButton.innerHTML = 'Paint Three Squares = OFF' 
+    }else{
+        threeSquare = true
+     threeSqButton.innerHTML = 'Paint Three Squares = ON'
+     for (const l of square){
+        l.addEventListener('click', paintThreeSq) 
+    }
+}
+}
+
+threeSqButton.addEventListener('click',paintThreeToggle)
+
