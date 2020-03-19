@@ -156,11 +156,14 @@ let threeSquare = false
 
 const paintThreeSq = (event) =>{
 if (threeSquare){
-    let x = square.indexOf(event.target)
-    square[x-1].style.backgroundColor = currentColor.style.backgroundColor
-    square[x+1].style.backgroundColor = currentColor.style.backgroundColor
+    let x = Array.from(square).indexOf(event.target)
+    square[x - 1].style.backgroundColor = currentColor.style.backgroundColor
+    square[x + 1].style.backgroundColor = currentColor.style.backgroundColor
+    square[x + 1].className = 'square ' + colorName(currentColor.className)
+    square[x - 1].className = 'square ' + colorName(currentColor.className)
 }
 }
+
 
 
 
